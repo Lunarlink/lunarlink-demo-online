@@ -95,12 +95,12 @@ export default function Products({ submitTarget, enabled }: Props) {
     trySendTransaction()
   }, [transaction])
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     // Stop the form from submitting and refreshing the page.
     event.preventDefault()
   }
 
-  const handleBuy = async (e, price) => {
+  const handleBuy = async (e: React.MouseEvent, price: number) => {
     e.preventDefault();
     try {
       if (!publicKey) {
@@ -118,7 +118,7 @@ export default function Products({ submitTarget, enabled }: Props) {
       const searchParams = new URLSearchParams()
       // Add reference to the params we'll pass to the API
       searchParams.append('reference', newReference.toString());
-      searchParams.append('amount', price);
+      searchParams.append('amount', price.toString());
       searchParams.append('pid', partnerId);
       searchParams.append('usePoints', usePoints.toString());
 

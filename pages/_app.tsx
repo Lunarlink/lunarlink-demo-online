@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <WalletModalProvider>
           <Layout>
             <Head>
-              <title>Cookies Inc</title>
+              <title>Super Moon Store</title>
             </Head>
             <Component {...pageProps} />
           </Layout>
